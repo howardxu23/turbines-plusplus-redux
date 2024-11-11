@@ -1,11 +1,9 @@
-if mods["Krastorio2"] then
-    require('prototypes/tur_mainK2')
-else 
-    require('prototypes/tur_main')
-end
+
 --SE
 if mods["space-exploration"] then
     require('scripts/SE/data')
+else
+    require('prototypes/tur_main')
 end
 
 if mods["CompressedFluids"] then
