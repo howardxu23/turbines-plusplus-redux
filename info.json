@@ -1,11 +1,11 @@
 {
-    "name": "turbines-plusplus-reloaded",
-    "version": "2.1.1",
-    "title": "Turbines ++ Reloaded",
-    "author": "howardxu23",
-    "factorio_version": "2.0",
-    "description": "Tired of big nuclear turbine setups? This mod adds new turbines and usage for super/extreme heated steam. With the full setup you will get up to 160 MW of power out of 100 MW heat. Fork of orignal mod by PreLeyZero",
-    "dependencies": [
-        "base >= 1.0.0"
-    ]
+  "name": "turbines-plusplus-reloaded-dev",
+  "version": "1.0.0",
+  "title": "Turbines ++ Reloaded [DEV]",
+  "author": "howardxu23",
+  "factorio_version": "2.0",
+  "description": "Tired of big nuclear turbine setups? This mod adds new turbines and usage for super/extreme heated steam. With the full setup you will get up to 160 MW of power out of 100 MW heat. Fork of orignal mod by PreLeyZero",
+  "dependencies": [
+    "base >= 2.0.0"
+  ]
 }

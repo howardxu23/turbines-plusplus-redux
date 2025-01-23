@@ -1,5 +1,5 @@
-local function sprite(name)
-    return '__turbines-plusplus-reloaded__/ressources/'..name
+function sprite(name)
+    return '__turbines-plusplus-reloaded-dev__/ressources/'..name--REMEBER TO REMOVE DEV FOR RELASE
 end
 
 --turbines
@@ -7,7 +7,7 @@ local tur_super_turbine_entity = util.table.deepcopy(data.raw.generator["steam-t
     tur_super_turbine_entity.name = "tur_super_turbine_entity"
     tur_super_turbine_entity.icon = sprite('tur_super_turbine_entity_icon.png')
     tur_super_turbine_entity.icon_size = 64
-    tur_super_turbine_entity.fluid_usage_per_tick = 1.6666
+    tur_super_turbine_entity.fluid_usage_per_tick = 1.6667
     tur_super_turbine_entity.burns_fluid = false
     tur_super_turbine_entity.scale_fluid_usage = false
     tur_super_turbine_entity.maximum_temperature = 750
@@ -16,6 +16,9 @@ local tur_super_turbine_entity = util.table.deepcopy(data.raw.generator["steam-t
     tur_super_turbine_entity.fluid_box.filter = "tur_super_torque"
     tur_super_turbine_entity.max_power_output = "30MW"
     tur_super_turbine_entity.next_upgrade = nil
+    --tur_super_turbine_entity.heating_energy="50kW"
+    --tur_super_turbine_entity.weight=50*kg
+    --
     tur_super_turbine_entity.horizontal_animation = {
         --filename = sprite('tur_super_turbine_entity_animation_horizontal.png'),
         filename = sprite('tur_super_turbine_entity_animation_horizontal.png'),
@@ -45,7 +48,7 @@ local tur_extreme_turbine_entity = util.table.deepcopy(data.raw.generator["steam
     tur_extreme_turbine_entity.name = "tur_extreme_turbine_entity"
     tur_extreme_turbine_entity.icon = sprite('tur_extreme_turbine_entity_icon.png')
     tur_extreme_turbine_entity.icon_size = 64
-    tur_extreme_turbine_entity.fluid_usage_per_tick = 1.6666
+    tur_extreme_turbine_entity.fluid_usage_per_tick = 1.6667
     tur_extreme_turbine_entity.burns_fluid = false
     tur_extreme_turbine_entity.scale_fluid_usage = false
     tur_extreme_turbine_entity.maximum_temperature = 900
@@ -54,6 +57,8 @@ local tur_extreme_turbine_entity = util.table.deepcopy(data.raw.generator["steam
     tur_extreme_turbine_entity.fluid_box.filter = "tur_extreme_torque"
     tur_extreme_turbine_entity.max_power_output = "40MW"
     tur_extreme_turbine_entity.next_upgrade = nil
+    --tur_extreme_turbine_entity.heating_energy="50kW"
+    --tur_extreme_turbine_entity.weight=50*kg
     tur_extreme_turbine_entity.horizontal_animation = {
         filename = sprite('tur_extreme_turbine_entity_animation_horizontal.png'),
         width = 512,
@@ -77,23 +82,24 @@ local tur_extreme_turbine_entity = util.table.deepcopy(data.raw.generator["steam
         animation_speed = 0.5
     }
     tur_extreme_turbine_entity.smoke = nil
-
+--Laplace 4-way steam turbine (80mw base)
 local tur_4way_turbine_entity = util.table.deepcopy(data.raw.generator["steam-turbine"])
 tur_4way_turbine_entity.name = "tur_4way_turbine_entity"
 tur_4way_turbine_entity.icon = sprite('tur_4way_turbine_entity_icon.png')
 tur_4way_turbine_entity.icon_size = 64
-tur_4way_turbine_entity.fluid_usage_per_tick = 4
+tur_4way_turbine_entity.fluid_usage_per_tick = 9.07
 tur_4way_turbine_entity.burns_fluid = false
 tur_4way_turbine_entity.scale_fluid_usage = false
-tur_4way_turbine_entity.maximum_temperature = 500
+tur_4way_turbine_entity.maximum_temperature = 750
 tur_4way_turbine_entity.minable.result = "tur_4way_turbine_item"
 tur_4way_turbine_entity.energy_source.usage_priority = "primary-output"
 tur_4way_turbine_entity.fluid_box.filter = "steam"
-tur_4way_turbine_entity.effectivity = 1.035
-tur_4way_turbine_entity.max_power_output = "24MW"
+tur_4way_turbine_entity.effectivity = 1.25
+--tur_4way_turbine_entity.max_power_output = "10MW"
 tur_4way_turbine_entity.next_upgrade = nil
-tur_4way_turbine_entity.collision_box = {{-2.5, -2.5}, {2.5, 2.5}}
-tur_4way_turbine_entity.selection_box = {{-2.5, -2.5}, {2.5, 2.5}}
+tur_4way_turbine_entity.collision_box = {{-2.4,-2.4},{2.4,2.4}}
+tur_4way_turbine_entity.selection_box = {{-2.5,-2.5},{2.5,2.5}}
+--tur_4way_turbine_entity.weight=50*kg
 tur_4way_turbine_entity.horizontal_animation = {
     filename = sprite('tur_4way_turbine_entity_animation.png'),
     width = 512,
@@ -132,23 +138,24 @@ tur_4way_turbine_entity.fluid_box = {
   production_type = "input-output",
   filter = "steam"
 }
-
+--Carnot 4-way steam turbine (120mw base)
 local tur_8way_turbine_entity = util.table.deepcopy(data.raw.generator["steam-turbine"])
 tur_8way_turbine_entity.name = "tur_8way_turbine_entity"
 tur_8way_turbine_entity.icon = sprite('tur_8way_turbine_entity_icon.png')
 tur_8way_turbine_entity.icon_size = 64
-tur_8way_turbine_entity.fluid_usage_per_tick = 4.003033333333333
+tur_8way_turbine_entity.fluid_usage_per_tick = 12.7334
 tur_8way_turbine_entity.burns_fluid = false
 tur_8way_turbine_entity.scale_fluid_usage = false
 tur_8way_turbine_entity.maximum_temperature = 800
 tur_8way_turbine_entity.minable.result = "tur_8way_turbine_item"
 tur_8way_turbine_entity.energy_source.usage_priority = "primary-output"
 tur_8way_turbine_entity.fluid_box.filter = "steam"
-tur_8way_turbine_entity.effectivity = 1.035
-tur_8way_turbine_entity.max_power_output = "44MW"
+tur_8way_turbine_entity.effectivity = 2
+--tur_8way_turbine_entity.max_power_output = "10MW"
 tur_8way_turbine_entity.next_upgrade = nil
-tur_8way_turbine_entity.collision_box = {{-2.5, -2.5}, {2.5, 2.5}}
-tur_8way_turbine_entity.selection_box = {{-2.5, -2.5}, {2.5, 2.5}}
+tur_8way_turbine_entity.collision_box = {{-2.4,-2.4},{2.4,2.4}}
+tur_8way_turbine_entity.selection_box = {{-2.5,-2.5},{2.5,2.5}}
+--tur_8way_turbine_entity.weight=50*kg
 tur_8way_turbine_entity.horizontal_animation = {
     filename = sprite('tur_8way_turbine_entity_animation.png'),
     width = 512,
@@ -196,6 +203,7 @@ local tur_exchanger_entity = util.table.deepcopy(data.raw.boiler["heat-exchanger
     tur_exchanger_entity.minable.result = "tur_exchanger_item"
     tur_exchanger_entity.energy_consumption = "60MW"
     tur_exchanger_entity.energy_source.min_working_temperature = 800
+    --tur_exchanger_entity.weight=50*kg
 
 local tur_exchanger_entity_2 = util.table.deepcopy(data.raw.boiler["heat-exchanger"])
     tur_exchanger_entity_2.name = "tur_exchanger_entity_2"
@@ -203,8 +211,12 @@ local tur_exchanger_entity_2 = util.table.deepcopy(data.raw.boiler["heat-exchang
     tur_exchanger_entity_2.minable.result = "tur_exchanger_item_2"
     tur_exchanger_entity_2.energy_consumption = "40MW"
     tur_exchanger_entity_2.energy_source.min_working_temperature = 750
+    --tur_exchanger_entity_2.weight=50*kg
 
-
+    local CrafterReceipe
+    if mods["space-age"] then--if space age is active then add exchangers, turbines, to foundary
+        CrafterReceipe="pressing"
+    end
 data:extend({
     tur_super_turbine_entity,
     tur_extreme_turbine_entity,
@@ -227,6 +239,7 @@ data:extend({
         stack_size = 20,
         subgroup = 'energy',
         order = 'x-a-c',
+        weight=200*kg
     },
     
     {
@@ -252,7 +265,7 @@ data:extend({
             type = 'void',
         },
         energy_usage = '1W',
-		
+		--heating_energy = "50kW",
         --fluid boxes
         fluid_boxes = {
             {
@@ -371,6 +384,7 @@ data:extend({
         stack_size = 20,
         subgroup = 'energy',
         order = 'x-b',
+        weight=50*kg
     },
     {
         name = 'tur_extreme_turbine_item',
@@ -381,6 +395,7 @@ data:extend({
         stack_size = 20,
         subgroup = 'energy',
         order = 'x-c',
+        weight=50*kg
     },
     {
         name = 'tur_4way_turbine_item',
@@ -391,6 +406,7 @@ data:extend({
         stack_size = 20,
         subgroup = 'energy',
         order = 'x-d',
+        weight=100*kg
     },
     {
         name = 'tur_8way_turbine_item',
@@ -401,6 +417,7 @@ data:extend({
         stack_size = 20,
         subgroup = 'energy',
         order = 'x-e',
+        weight=100*kg
     },
     --exchanger
     {
@@ -412,6 +429,7 @@ data:extend({
         stack_size = 20,
         subgroup = 'energy',
         order = 'x-a-b',
+        weight=50*kg
     },
     {
         name = 'tur_exchanger_item_2',
@@ -422,6 +440,7 @@ data:extend({
         stack_size = 20,
         subgroup = 'energy',
         order = 'x-a-a',
+        weight=50*kg
     },
     --torgue
     {
@@ -432,8 +451,8 @@ data:extend({
         default_temperature = 15,
         max_temperature = 1000,
         heat_capacity = '1kJ',
-        base_color = { r=0, g=0, b=0.1 }, 
-		flow_color = { r=0, g=0, b=0.1 }, 
+        base_color = { r=0, g=10, b=0 }, 
+		flow_color = { r=0, g=10, b=0 }, 
 		pressure_to_speed_ratio = 0.400, 
         flow_to_energy_ratio = 0,
         subgroup = 'energy',
@@ -448,14 +467,15 @@ data:extend({
         default_temperature = 15,
         max_temperature = 1000,
         heat_capacity = '1kJ',
-        base_color = { r=0, g=0, b=0.1 }, 
-		flow_color = { r=0, g=0, b=0.1 }, 
+        base_color = { r=0, g=0, b=10 }, 
+		flow_color = { r=0, g=0, b=10 }, 
 		pressure_to_speed_ratio = 0.400, 
         flow_to_energy_ratio = 0,
         subgroup = 'energy',
         order = 'z-a',
 	auto_barrel = false,
     },
+
     --recipes
     {
         name = 'tur_converter_recipe',
@@ -482,7 +502,7 @@ data:extend({
         },
         results = {
             {type="fluid", name="steam", amount=805, temperature=750},
-            {type="fluid", name="tur_extreme_torque", amount=420, temperature=900},
+            {type="fluid", name="tur_extreme_torque", amount=405, temperature=900},
         },
         energy_required = 1,
         always_show_made_in = true,
@@ -497,8 +517,8 @@ data:extend({
             {type="fluid", name="steam", amount=800, temperature=750},
         },
         results = {
-            {type="fluid", name="steam", amount=248, temperature=500},
-            {type="fluid", name="tur_super_torque", amount=420, temperature=750},
+            {type="fluid", name="steam", amount=241, temperature=500},
+            {type="fluid", name="tur_super_torque", amount=405, temperature=750},
         },
         energy_required = 1,
         always_show_made_in = true,
@@ -507,62 +527,67 @@ data:extend({
         name = 'tur_super_turbine_recipe',
         type = 'recipe',
         enabled = false,
+        category=CrafterReceipe,
         ingredients = {
-            {type="item", name="iron-plate", amount=200},
+            {type="item", name="copper-plate", amount=150},
             {type="item", name="iron-gear-wheel", amount=100},
             {type="item", name="steam-turbine", amount=4},
         },
         results = {
             {type="item", name="tur_super_turbine_item", amount=1},
         },
-        energy_required = 10,
+        energy_required = 30,
     },
     {
         name = 'tur_extreme_turbine_recipe',
         type = 'recipe',
         enabled = false,
+        category=CrafterReceipe,
         ingredients = {
-            {type="item", name="iron-plate", amount=200},
+            {type="item", name="copper-plate", amount=150},
             {type="item", name="iron-gear-wheel", amount=100},
             {type="item", name="tur_super_turbine_item", amount=4},
         },
         results = {
             {type="item", name="tur_extreme_turbine_item", amount=1},
         },
-        energy_required = 10,
+        energy_required = 30,
     },
     {
         name = 'tur_4way_turbine_recipe',
         type = 'recipe',
         enabled = false,
+        category=CrafterReceipe,
         ingredients = {
-            {type="item", name="iron-plate", amount=200},
+            {type="item", name="copper-cable", amount=300},
             {type="item", name="iron-gear-wheel", amount=100},
             {type="item", name="steam-turbine", amount=4},
         },
         results = {
             {type="item", name="tur_4way_turbine_item", amount=1},
         },
-        energy_required = 10,
+        energy_required = 20,
     },
     {
         name = 'tur_8way_turbine_recipe',
         type = 'recipe',
         enabled = false,
+        category=CrafterReceipe,
         ingredients = {
-            {type="item", name="iron-plate", amount=200},
+            {type="item", name="copper-cable", amount=300},
             {type="item", name="iron-gear-wheel", amount=100},
-            {type="item", name="tur_extreme_turbine_item", amount=4},
+            {type="item", name="tur_4way_turbine_item", amount=4},
         },
         results = {
             {type="item", name="tur_8way_turbine_item", amount=1},
         },
-        energy_required = 10,
+        energy_required = 20,
     },
     {
         name = 'tur_exchanger_recipe',
         type = 'recipe',
         enabled = false,
+        category=CrafterReceipe,
         ingredients = {
             {type="item", name="copper-plate", amount=220},
             {type="item", name="pipe", amount=100},
@@ -578,6 +603,7 @@ data:extend({
         name = 'tur_exchanger_recipe_2',
         type = 'recipe',
         enabled = false,
+        category=CrafterReceipe,
         ingredients = {
             {type="item", name="copper-plate", amount=100},
             {type="item", name="pipe", amount=40},
@@ -622,7 +648,7 @@ data:extend({
                 {'automation-science-pack',1},
                 {'logistic-science-pack',1}
             },
-            time = 100,
+            time = 60,
         },
     },
     {
@@ -656,7 +682,7 @@ data:extend({
                 {'logistic-science-pack',1},
 				{'production-science-pack',1}
             },
-            time = 100,
+            time = 60,
         },
     },
     {
@@ -665,7 +691,7 @@ data:extend({
         icon = sprite('tur_4way_turbine_tech.png'),
         icon_size = 128,
         prerequisites = {
-            'nuclear-power'
+            'nuclear-power','utility-science-pack'
         },
         effects = {
             { 
@@ -682,9 +708,11 @@ data:extend({
             ingredients = {
                 {'chemical-science-pack',1},
                 {'automation-science-pack',1},
-                {'logistic-science-pack',1}
+                {'logistic-science-pack',1},
+                {'utility-science-pack',1},
+                {'production-science-pack',1}
             },
-            time = 100,
+            time = 60,
         },
     },
 })

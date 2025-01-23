@@ -1,4 +1,5 @@
 
+--[[
 --SE
 if mods["space-exploration"] then
     require('scripts/SE/data')
@@ -15,3 +16,6 @@ if mods["CompressedFluids"] then
 	compressedFluids.remote.addTemperatureToFluid("steam", 900)
 	compressedFluids.remote.addTemperatureToFluid("steam", 1000)
 end
+]]--
+require('prototypes.tur_main')
+require("prototypes/condensation_recipes")

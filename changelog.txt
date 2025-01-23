@@ -1,14 +1,37 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.5
+Date: 25.12.2024
+  Features:
+    - (space age only) added condensation recipes to the converter, now you can use high power heat type reactors without needing to get 100 ice/sec.
+      It does come at a slight efficency penalty however
+    - (space age only) freezing effect is added to converter, torque turbines.
+      4 way turbines cannot freeze as a result
+  Balancing:
+    - Change the iron plates of 4 way turbines has copper plates replaced with 300 copper cables
+    - lapace 4-way now consumes 544/s 750 C steam to produce 100MW of power
+    - carnot 4 way now consumes 764/s 800 C steam to produce 240MW of power
+    - (space age)Added both improved heat exchanger versions, the turbines 4-way turbines to the foundary
+  Bugfixes
+    - changed carnot turbine needing extreme torque turbine to lapace
+---------------------------------------------------------------------------------------------------
+Version: 2.1.4
+Date: 03.12.2024
+  Balancing:
+    - change the iron plates of torque turbines and 4-way turbines from 200 iron plates to 150 copper plates
+---------------------------------------------------------------------------------------------------
+Version: 2.1.3
+Date: 02.12.2024
+  Balancing:
+    - added mass to items, so it now should not be too heavy to put on a rocket
+---------------------------------------------------------------------------------------------------
 Version: 2.1.0
 Date: 11.11.2024
-	Features:
-		- updated to work with factorio 2.0!
-		- removed patches for K2 and SE(for now)
-	Balancing:
-		- added production science pack as a nessasity for extreme torque turbines
-		- improved torque turbines power
-		
-
+  Features:
+    - updated to work with factorio 2.0!
+    - removed patches for K2 and SE(for now)
+  Balancing:
+    - added production science pack as a nessasity for extreme torque turbines
+    - improved torque turbines power
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.0
 Date: 23.12.2023
