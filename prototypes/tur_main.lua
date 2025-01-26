@@ -214,8 +214,108 @@ local tur_exchanger_entity_2 = util.table.deepcopy(data.raw.boiler["heat-exchang
     --tur_exchanger_entity_2.weight=50*kg
 
     local CrafterReceipe
+
+    local foundary_torque
+    local foundary_extreme_torque
+    local foundary_Lapace
+    local foundary_carnort
+    local foundary_superHeater
+    local foundary_extremeHeater
+    
     if mods["space-age"] then--if space age is active then add exchangers, turbines, to foundary
         CrafterReceipe="pressing"
+        --foundary recipies
+        foundary_torque={
+            name = 'tur_super_torque_casting',
+            type = 'recipe',
+            enabled = true,
+            category="metallurgy",
+            ingredients = {
+                {type="fluid", name="molten-copper", amount=1500},
+                {type="fluid", name="molten-iron", amount=1500},
+                {type="item", name="steam-turbine", amount=4},
+            },
+            results = {
+                {type="item", name="tur_super_turbine_item", amount=1},
+            },
+            energy_required = 30,
+        } 
+        foundary_extreme_torque={
+            name = 'tur_extreme_torque_casting',
+            type = 'recipe',
+            enabled = false,
+            category="metallurgy",
+            ingredients = {
+                {type="fluid", name="molten-copper", amount=1500},
+                {type="fluid", name="molten-iron", amount=1500},
+                {type="item", name="tur_super_turbine_item", amount=4},
+            },
+            results = {
+                {type="item", name="tur_extreme_turbine_item", amount=1},
+            },
+            energy_required = 30,
+        }
+        foundary_Lapace={
+            name = 'lapace_turbine_casting',
+            type = 'recipe',
+            enabled = false,
+            category="metallurgy",
+            ingredients = {
+                {type="item", name="copper-cable", amount=300},
+                {type="fluid", name="molten-iron", amount=1500},
+                {type="item", name="steam-turbine", amount=4},
+            },
+            results = {
+                {type="item", name="tur_4way_turbine_item", amount=1},
+            },
+            energy_required = 20,
+        }
+        foundary_carnort={
+            name = 'carnot_turbine_casting',
+            type = 'recipe',
+            enabled = false,
+            category="metallurgy",
+            ingredients = {
+                {type="item", name="copper-cable", amount=300},
+                {type="fluid", name="molten-iron", amount=1500},
+                {type="item", name="tur_4way_turbine_item", amount=4},
+            },
+            results = {
+                {type="item", name="tur_8way_turbine_item", amount=1},
+            },
+            energy_required = 20,
+        }
+        foundary_superHeater={
+            name = 'extreme_exchanger_casting',
+            type = 'recipe',
+            enabled = false,
+            category="metallurgy",
+            ingredients = {
+                {type="fluid", name="molten-copper", amount=2200},
+                {type="fluid", name="molten-iron", amount=1000},
+                {type="item", name="tur_exchanger_item_2", amount=1},
+                {type="item", name="heat-exchanger", amount=2},
+            },
+            results = {
+                {type="item", name="tur_exchanger_item", amount=1},
+            },
+            energy_required = 10,
+        }
+        foundary_extremeHeater={
+            name = 'super_exchanger_casting',
+            type = 'recipe',
+            enabled = false,
+            category="metallurgy",
+            ingredients = {
+                {type="fluid", name="molten-copper", amount=1000},
+                {type="fluid", name="molten-iron", amount=400},
+                {type="item", name="heat-exchanger", amount=4},
+            },
+            results = {
+                {type="item", name="tur_exchanger_item_2", amount=1},
+            },
+            energy_required = 10,
+        }
     end
 data:extend({
     tur_super_turbine_entity,
@@ -477,6 +577,12 @@ data:extend({
     },
 
     --recipes
+    foundary_torque,
+    foundary_extreme_torque,
+    foundary_Lapace,
+    foundary_carnort,
+    foundary_superHeater,
+    foundary_extremeHeater,
     {
         name = 'tur_converter_recipe',
         type = 'recipe',
@@ -527,7 +633,7 @@ data:extend({
         name = 'tur_super_turbine_recipe',
         type = 'recipe',
         enabled = false,
-        category=CrafterReceipe,
+        --category=CrafterReceipe,
         ingredients = {
             {type="item", name="copper-plate", amount=150},
             {type="item", name="iron-gear-wheel", amount=100},
@@ -542,7 +648,7 @@ data:extend({
         name = 'tur_extreme_turbine_recipe',
         type = 'recipe',
         enabled = false,
-        category=CrafterReceipe,
+        --category=CrafterReceipe,
         ingredients = {
             {type="item", name="copper-plate", amount=150},
             {type="item", name="iron-gear-wheel", amount=100},
@@ -557,7 +663,7 @@ data:extend({
         name = 'tur_4way_turbine_recipe',
         type = 'recipe',
         enabled = false,
-        category=CrafterReceipe,
+        --category=CrafterReceipe,
         ingredients = {
             {type="item", name="copper-cable", amount=300},
             {type="item", name="iron-gear-wheel", amount=100},
@@ -572,7 +678,7 @@ data:extend({
         name = 'tur_8way_turbine_recipe',
         type = 'recipe',
         enabled = false,
-        category=CrafterReceipe,
+        --category=CrafterReceipe,
         ingredients = {
             {type="item", name="copper-cable", amount=300},
             {type="item", name="iron-gear-wheel", amount=100},
@@ -587,7 +693,7 @@ data:extend({
         name = 'tur_exchanger_recipe',
         type = 'recipe',
         enabled = false,
-        category=CrafterReceipe,
+        --category=CrafterReceipe,
         ingredients = {
             {type="item", name="copper-plate", amount=220},
             {type="item", name="pipe", amount=100},
@@ -603,7 +709,7 @@ data:extend({
         name = 'tur_exchanger_recipe_2',
         type = 'recipe',
         enabled = false,
-        category=CrafterReceipe,
+        --category=CrafterReceipe,
         ingredients = {
             {type="item", name="copper-plate", amount=100},
             {type="item", name="pipe", amount=40},
@@ -640,6 +746,7 @@ data:extend({
                 type = 'unlock-recipe',
                 recipe = 'tur_super_turbine_recipe',
             }
+            
         },
         unit = {
             count = 1000,
