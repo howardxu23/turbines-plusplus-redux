@@ -1,5 +1,5 @@
 function sprite(name)
-    return '__turbines-plusplus-reloaded-dev__/ressources/'..name--REMEBER TO REMOVE DEV FOR RELASE
+    return '__turbines-plusplus-reloaded-dev__/resources/'..name--REMEBER TO REMOVE DEV FOR RELASE
 end
 
 --turbines
