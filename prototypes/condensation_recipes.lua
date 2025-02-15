@@ -1,7 +1,7 @@
---condensing systems for space age(allowing the use of powerful modded heat type reactors without needed 100 ice per second on space platforns)
+--condensing systems for space age(allowing the use of powerful modded heat type reactors without needed 100 ice per second on space platforms)
 
 --superheated:   750 C
---extreme heatd: 800 C
+--extreme heated: 800 C
 
 local superheat_condensing_cycle_basic={}
 local superheat_condensing_cycle_advanced={}
@@ -11,9 +11,9 @@ local superheat_condensing_cycle_basic_technology={}
 local superheat_condensing_cycle_advanced_technology={}
 local extremeHeat_condensing_cycle_technology={}
 
-if mods["space-age"] then--checks for space age is active, then enables the recipes
+if mods["space-age"] then --checks for space age is active, then enables the recipes
 
-    --recipe for basic condensing for superheated steam, 90% efficency
+    --recipe for basic condensing for superheated steam, 90% efficiency
     superheat_condensing_cycle=
     {
         name = 'superheated-condensation-basic',
@@ -32,7 +32,7 @@ if mods["space-age"] then--checks for space age is active, then enables the reci
         energy_required = 1,
         always_show_made_in = true
     }
-    --recipe for advanced condensing for superheated steam, 100% efficency
+    --recipe for advanced condensing for superheated steam, 100% efficiency
     superheat_condensing_cycle_advanced=
     {
         name = 'superheated-condensation-advanced',
@@ -51,7 +51,7 @@ if mods["space-age"] then--checks for space age is active, then enables the reci
         energy_required = 1,
         always_show_made_in = true
     }
-    --recipe for extreme heat condensing cycle, uses mixed out at 100% efficency
+    --recipe for extreme heat condensing cycle, uses mixed out at 100% efficiency
     extremeHeat_condensing_cycle=
     {
         name = 'extremeHeat-condensation-advanced',

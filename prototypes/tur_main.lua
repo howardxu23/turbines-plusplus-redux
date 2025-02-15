@@ -1,5 +1,5 @@
 function sprite(name)
-    return '__turbines-plusplus-reloaded-dev__/ressources/'..name--REMEBER TO REMOVE DEV FOR RELASE
+    return '__turbines-plusplus-reloaded-dev__/resources/'..name --REMEMBER TO REMOVE DEV FOR RELASE
 end
 
 --turbines
@@ -213,7 +213,7 @@ local tur_exchanger_entity_2 = util.table.deepcopy(data.raw.boiler["heat-exchang
     tur_exchanger_entity_2.energy_source.min_working_temperature = 750
     --tur_exchanger_entity_2.weight=50*kg
 
-    local CrafterReceipe
+    local CrafterRecipe
 
     local foundary_torque
     local foundary_extreme_torque
@@ -222,9 +222,9 @@ local tur_exchanger_entity_2 = util.table.deepcopy(data.raw.boiler["heat-exchang
     local foundary_superHeater
     local foundary_extremeHeater
     
-    if mods["space-age"] then--if space age is active then add exchangers, turbines, to foundary
-        CrafterReceipe="pressing"
-        --foundary recipies
+    if mods["space-age"] then --if space age is active then add exchangers, turbines, to foundry
+        CrafterRecipe="pressing"
+        --foundry recipes
         foundary_torque={
             name = 'tur_super_torque_casting',
             type = 'recipe',
@@ -542,7 +542,7 @@ data:extend({
         order = 'x-a-a',
         weight=50*kg
     },
-    --torgue
+    --torque
     {
         name = 'tur_extreme_torque',
         type = 'fluid',
@@ -633,7 +633,7 @@ data:extend({
         name = 'tur_super_turbine_recipe',
         type = 'recipe',
         enabled = false,
-        --category=CrafterReceipe,
+        --category=CrafterRecipe,
         ingredients = {
             {type="item", name="copper-plate", amount=150},
             {type="item", name="iron-gear-wheel", amount=100},
@@ -648,7 +648,7 @@ data:extend({
         name = 'tur_extreme_turbine_recipe',
         type = 'recipe',
         enabled = false,
-        --category=CrafterReceipe,
+        --category=CrafterRecipe,
         ingredients = {
             {type="item", name="copper-plate", amount=150},
             {type="item", name="iron-gear-wheel", amount=100},
@@ -663,7 +663,7 @@ data:extend({
         name = 'tur_4way_turbine_recipe',
         type = 'recipe',
         enabled = false,
-        --category=CrafterReceipe,
+        --category=CrafterRecipe,
         ingredients = {
             {type="item", name="copper-cable", amount=300},
             {type="item", name="iron-gear-wheel", amount=100},
@@ -678,7 +678,7 @@ data:extend({
         name = 'tur_8way_turbine_recipe',
         type = 'recipe',
         enabled = false,
-        --category=CrafterReceipe,
+        --category=CrafterRecipe,
         ingredients = {
             {type="item", name="copper-cable", amount=300},
             {type="item", name="iron-gear-wheel", amount=100},
@@ -693,7 +693,7 @@ data:extend({
         name = 'tur_exchanger_recipe',
         type = 'recipe',
         enabled = false,
-        --category=CrafterReceipe,
+        --category=CrafterRecipe,
         ingredients = {
             {type="item", name="copper-plate", amount=220},
             {type="item", name="pipe", amount=100},
@@ -709,7 +709,7 @@ data:extend({
         name = 'tur_exchanger_recipe_2',
         type = 'recipe',
         enabled = false,
-        --category=CrafterReceipe,
+        --category=CrafterRecipe,
         ingredients = {
             {type="item", name="copper-plate", amount=100},
             {type="item", name="pipe", amount=40},
