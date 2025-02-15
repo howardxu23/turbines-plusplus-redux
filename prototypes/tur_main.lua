@@ -222,9 +222,9 @@ local tur_exchanger_entity_2 = util.table.deepcopy(data.raw.boiler["heat-exchang
     local foundary_superHeater
     local foundary_extremeHeater
     
-    if mods["space-age"] then--if space age is active then add exchangers, turbines, to foundary
+    if mods["space-age"] then --if space age is active then add exchangers, turbines, to foundry
         CrafterReceipe="pressing"
-        --foundary recipies
+        --foundry recipies
         foundary_torque={
             name = 'tur_super_torque_casting',
             type = 'recipe',
