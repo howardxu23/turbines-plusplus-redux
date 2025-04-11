@@ -1,3 +1,4 @@
+
 if mods["space-age"] then--checks for space age is active, then adds heating system
     --adds heating system
     data.raw["generator"]["tur_super_turbine_entity"].heating_energy = "50kW"

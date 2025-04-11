@@ -80,7 +80,7 @@ if mods["space-age"] then--checks for space age is active, then enables the reci
         name = 'superheated-condensation-basic-tech',
         type = 'technology',
         icon = sprite('basic-superheat-condensation.png'),
-        icon_size = 128,
+        icon_size = 64,
         prerequisites = {
             'tur_extreme_torque_tech', 'metallurgic-science-pack'
         },
@@ -110,7 +110,7 @@ if mods["space-age"] then--checks for space age is active, then enables the reci
         name = 'superheated-condensation-advanced-tech',
         type = 'technology',
         icon = sprite('advanced-superheat-condensation.png'),
-        icon_size = 128,
+        icon_size = 64,
         prerequisites = {
             'superheated-condensation-basic-tech', 'electromagnetic-science-pack'
         },
@@ -141,7 +141,7 @@ if mods["space-age"] then--checks for space age is active, then enables the reci
         name = 'extremeHeat-condensation-advanced-tech',
         type = 'technology',
         icon = sprite('extreme-heat-condensation.png'),
-        icon_size = 128,
+        icon_size = 64,
         prerequisites = {
             'superheated-condensation-advanced-tech', 'agricultural-science-pack'
         },
@@ -171,9 +171,7 @@ if mods["space-age"] then--checks for space age is active, then enables the reci
 end
 
 
-
-data:extend
-({
+data:extend({
     superheat_condensing_cycle,
     superheat_condensing_cycle_advanced,
     superheat_condensing_cycle_basic_technology,
@@ -181,3 +179,4 @@ data:extend
     extremeHeat_condensing_cycle,
     extremeHeat_condensing_cycle_technology
 })
+
